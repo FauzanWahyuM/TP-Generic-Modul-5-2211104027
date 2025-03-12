@@ -12,6 +12,10 @@ namespace tpmodul5_2211104027
         {
             // Memanggil metode generic SapaUser
             HaloGeneric.SapaUser("Fauzan");
+
+            // Menggunakan kelas DataGeneric
+            DataGeneric<string> dataGeneric = new DataGeneric<string>("NIM : 2211104027");
+            dataGeneric.PrintData();
         }
     }
 
@@ -21,6 +25,22 @@ namespace tpmodul5_2211104027
         public static void SapaUser<T>(T user)
         {
             Console.WriteLine($"Halo user {user}");
+        }
+    }
+
+    // DataGeneric.cs
+    class DataGeneric<T>
+    {
+        private T data;
+
+        public DataGeneric(T data)
+        {
+            this.data = data;
+        }
+
+        public void PrintData()
+        {
+            Console.WriteLine($"Data yang tersimpan adalah dengan {data}");
         }
     }
 
